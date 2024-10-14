@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Extension Data</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #101820;
+      color: #FEE715;
+    }
+    .top-fixed {
+      position: fixed;
+      top: 0;
+      padding: 10px;
+      width: 100%;
+      background-color: #101820;
+      z-index: 999;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+    .content {
+      margin-top: 70px;
+      padding: 20px;
+    }
+    #urlsContainer {
+      margin-top: 2rem;
+      color: #FEE715;
+      background-color: #2F3C7E;
+      height: 200px;
+      width: 100%;
+      overflow-y: scroll;
+      overflow-wrap: break-word;
+      padding: 10px;
+    }
+    ul {
+      list-style-type: none;
+      padding: 0;
+    }
+    li {
+      margin: 10px 0;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    li img {
+      margin-right: 10px;
+    }
+    input[type="text"] {
+      padding: 5px;
+      margin-right: 10px;
+    }
+    input[type="checkbox"] {
+      margin-right: 10px;
+    }
+
+    /* CSS for grouped URL sections */
+.url-group {
+  margin-bottom: 20px;
+  margin-left: 30px;
+  margin-right: 30px;
+
+  border: 1px solid #ccc;
+  padding: 10px;
+  background-color: #2F3C7E;
+
+}
+
+.url-group h2 {
+  color: #FEE715;
+  font-size: 30px;
+  margin-bottom: 10px;
+  text-align: center; /* Center-align only the <h2> element */
+
+}
+
+
+.url-group li img {
+  margin-right: 10px;
+}
+
+.url-group input[type="checkbox"] {
+  width: 22px; /*Desired width*/
+  height: 22px; /*Desired height*/
+
+}
+
+
+
+
+.url-group a {
+  color: #FEE715;
+  text-decoration: none;
+}
+
+.url-group a:hover {
+  text-decoration: underline;
+}
+
+.url-group span {
+  color: #ccc;
+  font-size: 22px;
+}
+
+
+
+.url-group li {
+  margin: 10px 0; /* Adjust vertical spacing */
+  font-size: 22px; /* Adjust font size */
+  white-space: nowrap; /* Prevent text wrapping */
+  overflow: hidden; /* Hide overflowing content */
+  text-overflow: ellipsis; /* Display ellipsis for overflowed text */
+  max-width: 80%; /* Optional: Set a maximum width for each list item */
+  display: block; /* Ensure each <li> is a block element */
+}
+
+
+  </style>
+</head>
+<body>
+  <div class="top-fixed">
+    <button id="clearData">Clear Data</button>
+    <button id="downloadCSV">Download CSV</button>
+    <input type="text" id="startInput" placeholder="Start index">
+    <input type="text" id="endInput" placeholder="End index">
+    <button id="deleteRange">Delete Range</button>
+    <button id="deleteSelected">Delete Selected</button>
+    <input type="text" id="searchInput" placeholder="Search...">
+    <button id="copyUrlsBtn">Copy URLs to Clipboard</button>
+    <button id="retrieveUrlsBtn">Retrieve URLs</button>
+    <button id="download-button">Download</button>
+    <span>... if this doesn't work, use the python in the extensions folder</span>
+  </div>
+
+  <div class="content">
+    <div id="urlsContainer"></div>
+    <h1>Saved URLs</h1>
+    <ul id="urlList"></ul>
+  </div>
+
+  <script src="data_retriever.js"></script>
+  <script src="data.js"></script>
+</body>
+</html>
